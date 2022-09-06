@@ -9,7 +9,7 @@ def forecast(place='Null Island', *args):
     percent_chance = random.randint(1,101)
     percent_chance = str(percent_chance)
     future_weather = random.choice(['rain', 'thunder and lightning', 'clouds', 'increased humidity', 'high winds', 'fog', 'storms', 'hail', 'sleet', 'tornado', 'snow', 'solar flare', 'tsunami', 'zombie apocalypse', 'raining tacos', 'wildfire', 'avalanche', 'sand storms', 'drought'])
-    print(' '.join(['Right now, in', place+',', 'it is', current_weather, 'with a', percent_chance, 'percent chance of', future_weather+'.']))
+    return(' '.join(['Right now, in', place+',', 'it is', current_weather, 'with a', percent_chance, 'percent chance of', future_weather+'.']))
     
 if(__name__=="__main__"):
-    forecast()
+    print(forecast())

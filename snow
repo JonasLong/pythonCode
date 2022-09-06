@@ -1,0 +1,65 @@
+#Prints a house with snow falling
+
+import simplegui
+import random
+def dsp(text):
+    print(text)
+
+def rpl(text):
+    if len(text) >= 50:
+        text = '****'+text
+    else:
+        text = '****'+text+'*****************'
+    rand = random.randint(0, text.count('*'))
+    dsp(text.replace('*', '?', rand).replace('?', ' ', rand - 1).replace('*', ' ').replace('?', '*', 1))
+    
+def sn():
+    rpl('**********************************')
+    
+def mpt_wall():
+    return '|                                |'
+    
+def window_wall():
+    return '|          |         |           |'
+    
+def roof():
+    sn()
+    sn()
+    sn()
+    sn()
+    rpl('**************______******_____***')
+    rpl('************_/      \_***|_____|**')
+    rpl('***********/          \**|     |**')
+    rpl('*********_/            \_|     |**')
+    rpl('********/                \     |**')
+    rpl('******_/                  \_   |**')
+    rpl('*****/                      \  |**')
+    rpl('***_/                        \_|**')
+    rpl('**/                            \**')
+    rpl('_/                              \_')
+    
+    
+def wall():
+    rpl(mpt_wall())
+    rpl('|           _________            |')
+    rpl(window_wall())
+    rpl(window_wall()+'*****************')
+    rpl(window_wall()+'*********__******')
+    rpl('|          |_________|           |'+'*******_|__|_****')
+    rpl(mpt_wall()+"********('')*****")
+    rpl(mpt_wall()+'******<( .  )>***')
+    rpl(mpt_wall()+'*******( .  )****')
+    
+def ground():
+    rpl('|________________________________|***____(____)___*')
+    
+
+def timer_handler():
+    print('\n\n\n\n\n\n\n\n')
+    roof()
+    wall()
+    ground()
+
+    
+timer = simplegui.create_timer(100, timer_handler)
+timer.start()

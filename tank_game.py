@@ -1,4 +1,4 @@
-#This program was written before I had learned about python classes, and uses the CodeSkulptor simpleGUI
+#Tank game
 
 import simplegui
 #GUI
